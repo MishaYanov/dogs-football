@@ -1,0 +1,61 @@
+@mixin about-desktop {
+  .about-story {
+    grid-column: main;
+    .story-header{
+      font-size: 2em;
+    }
+    p{
+      font-size: 1.2em;
+    }
+
+  }
+  .about-managment {
+    display: grid;
+    grid-column: 1/ span n;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 1em 0;
+    .managment-header{
+       grid-column: 2/3;
+    }
+    .managment-cards{
+        height: calc(100% + 1em);
+        grid-column: 1/ span n;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 80%;
+        gap:3%;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+  }
+}
+
+@mixin about-mobile{
+  .about-story {
+    width: 95%;
+    margin: 0 auto;
+    .story-header{
+
+    }
+
+    p{
+
+    }
+  }
+  .about-managment {
+    width: 95%;
+    margin: 0 auto;
+    .managment-header{
+    }
+    .managment-cards{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,181 @@
+@import "./variables.scss";
+@import "./components/nav.scss";
+@import "./components/hero.scss";
+@import "./components/about.scss";
+@import "./components/gallery.scss";
+@import "./components/schedule.scss";
+@import "./components/footer.scss";
+
+@mixin mobile-theme {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin desktop-theme {
+  // #root{
+  //   display: grid;
+  //   grid-template-columns: 1fr 2fr 1fr;
+  // }
+  .website-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "side-left main side-right";
+    // grid-template-columns: 1fr 2fr 1fr;
+    margin-top: 3%;
+  }
+}
+
+// ############################ color scheme ############################
+@mixin color-scheme($main, $light, $dark, $text, $bg) {
+  background-color: $bg;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  li,
+  span,
+  input,
+  button {
+    color: $text;
+    line-height: 1.5;
+  }
+  h1{
+    font-size: 2.5em;
+  }
+  h2{
+    font-size: 2em;
+  }
+  h3{
+    font-size: 1.5em;
+  }
+  p{
+    font-size: 1.2em;
+  }
+  
+
+  @media (max-width: 1200px) {
+    h1{
+      font-size: 2em;
+    }
+    h2{
+      font-size: 1.5em;
+    }
+    h3{
+      font-size: 1.2em;
+    }
+    p{
+      font-size: 1em;
+    }
+  }
+  // @media (max-width: 1000px) {
+  //   h1{
+  //     font-size: 1.5em;
+  //   }
+  //   h2{
+  //     font-size: 1.2em;
+  //   }
+  //   h3{
+  //     font-size: 1em;
+  //   }
+  //   p{
+  //     font-size: 0.9em;
+  //   }
+  // }
+  .btn {
+    background-color: $main;
+    &:hover {
+      background-color: $light;
+    }
+    &:active {
+      background-color: $dark;
+    }
+  }
+  nav .logo{
+    background-color: $main;
+  }
+  
+    .highlight {
+      color: $main;
+    }
+    .highlight:hover {
+      color: $dark;
+    }
+    .highlight-dark {
+      color: $dark;
+    }
+    .highlight-dark:hover {
+      color: $main;
+    }
+    
+    .card{
+      border: 3px solid $main;
+      border-radius: 5px;
+      .card-img{
+        border: 1px solid $main;
+      }
+      .card-position{
+        color: $dark;
+      }
+    }
+    table{
+      thead{
+        background-color: $main;
+        color: $text;
+      }
+    }
+    .gl {
+      button{
+                 color: $dark !important;
+             }
+     }
+
+    footer{
+      img{
+        border-top: 10px solid $main;
+        border-radius: 5px;
+      }
+      margin-top: 10px;
+    }
+}
+
+body.dogs {
+  @include color-scheme($scheme-dogs...);
+}
+body.rams {
+  @include color-scheme($scheme-rams...);
+}
+
+@media (min-width: $breakpoint-sm) {
+  body {
+    @include desktop-theme;
+  }
+  @include nav-scheme-desktop;
+  @include hero-desktop;
+  @include about-desktop;
+  @include gallery-desktop;
+  @include schedule-desktop;
+  @include footer-desktop;
+}
+
+@media (max-width: $breakpoint-sm) {
+  #root{
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+  }
+  body {
+    @include mobile-theme;
+  }
+
+  @include nav-scheme-mobile;
+  @include hero-mobile;
+  @include about-mobile;
+  @include gallery-mobile;
+  @include schedule-mobile;
+  @include footer-mobile;
+
+}

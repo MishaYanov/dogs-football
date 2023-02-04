@@ -1,0 +1,49 @@
+// dogs color template
+$yellow-main: #f1c40f;
+$yellow-light: #f9e79f;
+$yellow-dark: #d4ac0d;
+$very-dark-gery-text: #272727;
+
+//scheme rams
+$blue-main: #3498db;
+$blue-light: #a6d9f1;
+$blue-dark: #2a80b9;
+$dark-grey-text: #3e4048;
+
+//global colors
+$bg: #f1f1f1;
+
+
+
+
+$scheme-dogs: $yellow-main, $yellow-light, $yellow-dark, $very-dark-gery-text, $bg;
+$scheme-rams: $blue-main, $blue-light, $blue-dark, $dark-grey-text, $bg;
+
+
+//breakpoints
+$breakpoint-sm: 720px;
+
+
+
+//navigation variables
+//nav desktop styles
+$position: absolute;
+$top: 5%;
+$left: 10%;
+$width: 80%;
+$height: 80px;
+$background: transparent;
+$z-index: 1;
+$display: flex;
+$justify-content: space-between;
+$align-items: center;
+$padding: 1rem;
+$margin: 0;
+
+
+
+
+
+
+
+

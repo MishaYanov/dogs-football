@@ -1,0 +1,94 @@
+@import '../variables.scss';
+
+@mixin gallery-desktop{
+    .gallery-header{
+        grid-column: 2/3;
+        margin-top: 15%;
+    }
+    .gallery-wrapper {
+        grid-column: 1 / span n;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        .gl {
+          height: 600px !important;
+          width: 900px !important;
+          .image-gallery-slides{
+              object-fit: contain;
+          }
+          .image-gallery-image{
+              height: 600px !important;
+              // aspect-ratio: 1/1;
+              object-fit: contain;
+          }
+          .image-gallery-slide-wrapper{
+              max-height: 600px !important;
+              max-width: 900px !important;
+              object-fit: contain;
+          }
+          .fullscreen{
+              height: 100vh !important;
+              width: 100vw !important;
+              .image-gallery-slides{
+                  object-fit: contain;
+              }
+              .image-gallery-image{
+                  height: 100vh !important;
+                  object-fit: contain;
+              }
+              .image-gallery-slide-wrapper{
+                  max-height: 100vh !important;
+                  max-width: 100vw !important;
+                  object-fit: contain;
+              }
+          }
+       
+          object-position: center;
+        }
+      }
+}
+
+
+@mixin gallery-mobile{
+    .gallery-header{
+        width: 95%;
+        margin: 3% auto;
+    }
+    .gallery-wrapper{
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+    .gl {
+        width: 100% !important;
+        aspect-ratio: 1/1;
+        .image-gallery-slides{
+            object-fit: contain;
+        }
+        button{
+            color: $dark-grey-text !important;
+        }
+        .image-gallery-image{
+            aspect-ratio: 1/1;
+            object-fit: contain;
+        }
+    }
+    .fullscreen{
+        height: 100vh !important;
+        width: 100vw !important;
+        .image-gallery-slides{
+            object-fit: contain;
+        }
+        .image-gallery-image{
+            height: 100vh !important;
+            object-fit: contain;
+        }
+        .image-gallery-slide-wrapper{
+            max-height: 100vh !important;
+            max-width: 100vw !important;
+            object-fit: contain;
+        }
+    }
+ 
+}
